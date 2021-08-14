@@ -8,12 +8,12 @@
 
 using namespace std;
 
-int a[MAX_NUM] = {}, b[MAX_NUM] = {}; //a,b / 2진수
+int a[MAX_NUM] = { 0, }, b[MAX_NUM] = { 0, }; //a,b / 2진수
+int c1[MAX_CUL] = { 0, }, c2[MAX_CUL] = { 0, }; //c == save / c1 == plus , c2 == minus
 int al = 0, bl = 0; //a,b / l=length
-int ru1[MAX_CUL] = {}, ru2[MAX_CUL] = {}; //ru == 올림(up) 올림을 잠시 저장 / ru1 == plus , ru2 == minus
-int c1[MAX_CUL] = {}, c2[MAX_CUL] = {}; //c == save / c1 == plus , c2 == minus
-int rpc1_1[MAX_CUL] = {}, rpc1_2[MAX_CUL] = {}, rpc2_1[MAX_CUL] = {}, rpc2_2[MAX_CUL] = {}; //ex) rpc1_1 / 1(number)_1(보수, 2 == 2의 보수)
-int rpc1_2_ru[MAX_CUL] = {}, rpc2_2_ru[MAX_CUL] = {}; //2의 보수 올림(up) 저장
+int rpc1_1[MAX_CUL] = { 0, }, rpc1_2[MAX_CUL] = { 0, }, rpc2_1[MAX_CUL] = { 0, }, rpc2_2[MAX_CUL] = { 0, }; //ex) rpc1_1 / 1(number)_1(보수, 2 == 2의 보수)
+int rpc1_2_ru[MAX_CUL] = { 0, }, rpc2_2_ru[MAX_CUL] = { 0, }; //2의 보수 올림(up) 저장
+int ru1[MAX_CUL] = { 0, }, ru2[MAX_CUL] = { 0, }; //ru == 올림(up) 올림을 잠시 저장 / ru1 == plus , ru2 == minus
 
 void arrayin();
 void arraychange();
