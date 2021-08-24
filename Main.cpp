@@ -1,6 +1,5 @@
 #include <iostream>
 #include <windows.h>
-#include <string>
 
 #define MAX_NUM 10
 #define MAX_CUL MAX_NUM
@@ -8,12 +7,12 @@
 
 using namespace std;
 
-int a[MAX_NUM] = { 0, }, b[MAX_NUM] = { 0, }; //a,b / 2Áø¼ö
+int a[MAX_NUM] = { 0, }, b[MAX_NUM] = { 0, }; //a,b / 2ì§„ìˆ˜
 int c1[MAX_CUL] = { 0, }, c2[MAX_CUL] = { 0, }; //c == save / c1 == plus , c2 == minus
 int al = 0, bl = 0; //a,b / l=length
-int rpc1_1[MAX_CUL] = { 0, }, rpc1_2[MAX_CUL] = { 0, }, rpc2_1[MAX_CUL] = { 0, }, rpc2_2[MAX_CUL] = { 0, }; //ex) rpc1_1 / 1(number)_1(º¸¼ö, 2 == 2ÀÇ º¸¼ö)
-int rpc1_2_ru[MAX_CUL] = { 0, }, rpc2_2_ru[MAX_CUL] = { 0, }; //2ÀÇ º¸¼ö ¿Ã¸²(up) ÀúÀå
-int ru1[MAX_CUL] = { 0, }, ru2[MAX_CUL] = { 0, }; //ru == ¿Ã¸²(up) ¿Ã¸²À» Àá½Ã ÀúÀå / ru1 == plus , ru2 == minus
+int rpc1_1[MAX_CUL] = { 0, }, rpc1_2[MAX_CUL] = { 0, }, rpc2_1[MAX_CUL] = { 0, }, rpc2_2[MAX_CUL] = { 0, }; //ex) rpc1_1 / 1(number)_1(ë³´ìˆ˜, 2 == 2ì˜ ë³´ìˆ˜)
+int rpc1_2_ru[MAX_CUL] = { 0, }, rpc2_2_ru[MAX_CUL] = { 0, }; //2ì˜ ë³´ìˆ˜ ì˜¬ë¦¼(up) ì €ì¥
+int ru1[MAX_CUL] = { 0, }, ru2[MAX_CUL] = { 0, }; //ru == ì˜¬ë¦¼(up) ì˜¬ë¦¼ì„ ì ì‹œ ì €ì¥ / ru1 == plus , ru2 == minus
 
 void arrayin();
 void arraychange();
@@ -32,7 +31,7 @@ void CursorView(char show);
 
 int main()
 {
-	system("title 2Áø¼ö °è»ê±â");
+	system("title 2ì§„ìˆ˜ ê³„ì‚°ê¸°");
 	CursorView(true);
 	arrayin();
 	system("cls");
@@ -57,12 +56,12 @@ int main()
 
 void arrayin()
 {
-	while (1) //2Áø¼ö ±æÀÌ ÀÔ·Â 0 < x < 9 ¿Ü ¹İº¹
+	while (1) //2ì§„ìˆ˜ ê¸¸ì´ ì…ë ¥ 0 < x < 9 ì™¸ ë°˜ë³µ
 	{
-		cout << "1, 2¹øÀÇ 2Áø¼ö ±æÀÌ¸¦ °¢°¢ ÀÔ·Â! ÃÖ´ë 9ÀÚ¸®" << endl;
-		cout << "1. 2Áø¼ö ±æÀÌ : ";
+		cout << "1, 2ë²ˆì˜ 2ì§„ìˆ˜ ê¸¸ì´ë¥¼ ê°ê° ì…ë ¥! ìµœëŒ€ 9ìë¦¬" << endl;
+		cout << "1. 2ì§„ìˆ˜ ê¸¸ì´ : ";
 		cin >> al;
-		cout << "2. 2Áø¼ö ±æÀÌ : ";
+		cout << "2. 2ì§„ìˆ˜ ê¸¸ì´ : ";
 		cin >> bl;
 		system("cls");
 		if (al > 0 && al <= 9)
@@ -74,7 +73,7 @@ void arrayin()
 void arraychange()
 {
 	int num1 = 0, num2 = 0, i = 0;
-	cout << "2°³ÀÇ 2Áø¼ö¸¦ ÀÔ·Â!" << endl << "1. (" << al << ") 2. (" << bl << ")" << endl;
+	cout << "2ê°œì˜ 2ì§„ìˆ˜ë¥¼ ì…ë ¥!" << endl << "1. (" << al << ") 2. (" << bl << ")" << endl;
 	cin >> num1 >> num2;
 	while (num1)
 	{
@@ -269,7 +268,7 @@ void minusprint(int l)
 		cout << rpc1_1[i];
 	}
 	gotoxy(12 - num2 + 3, l);
-	cout << "1ÀÇ º¸¼ö";
+	cout << "1ì˜ ë³´ìˆ˜";
 	gotoxy(12 - num2, l + 1);
 	cout << "1";
 	for (int i = 0; i < num1; i++)
@@ -285,7 +284,7 @@ void minusprint(int l)
 		}
 	}
 	gotoxy(12 - num2 + 3, l + 2);
-	cout << "2ÀÇ º¸¼ö";
+	cout << "2ì˜ ë³´ìˆ˜";
 	linepm(l + 2, 0);
 	for (int i = 0; i < num1; i++)
 	{
@@ -294,7 +293,7 @@ void minusprint(int l)
 		cout << a[i];
 	}
 	gotoxy(12 - num2 + 3, l + 4);
-	cout << "Ã¹¹øÂ° ÀÔ·Â °ª";
+	cout << "ì²«ë²ˆì§¸ ì…ë ¥ ê°’";
 	for (int i = 0; i < num1; i++)
 	{
 		Sleep(Sleepcount);
@@ -302,7 +301,7 @@ void minusprint(int l)
 		cout << rpc1_2[i];
 	}
 	gotoxy(12 - num2 + 3, l + 5);
-	cout << "µÎ¹øÂ° ÀÔ·Â °ªÀÇ 2ÀÇ º¸¼ö";
+	cout << "ë‘ë²ˆì§¸ ì…ë ¥ ê°’ì˜ 2ì˜ ë³´ìˆ˜";
 	linepm(l + 5, 1);
 	for (int i = 0; i < num1; i++)
 	{
@@ -326,7 +325,7 @@ void minusprint(int l)
 		cout << "1";
 		Sleep(Sleepcount);
 		gotoxy(12 - num2 + 3, l + 8);
-		cout << "¼ıÀÚ " << num1 + 1 << "¿¡¼­ 1ÀÚ¸® Áõ°¡/1ÀÚ¸® »èÁ¦!";
+		cout << "ìˆ«ì " << num1 + 1 << "ì—ì„œ 1ìë¦¬ ì¦ê°€/1ìë¦¬ ì‚­ì œ!";
 		gotoxy(2, l + 8);
 		cout << " ";
 	}
@@ -341,7 +340,7 @@ void minusprint(int l)
 			cout << rpc2_1[i];
 		}
 		gotoxy(12 - num2 + 3, l + 10);
-		cout << "1ÀÇ º¸¼ö";
+		cout << "1ì˜ ë³´ìˆ˜";
 		gotoxy(12 - num2, l + 11);
 		cout << "1";
 		for (int i = 0; i < num1; i++)
@@ -357,7 +356,7 @@ void minusprint(int l)
 			}
 		}
 		gotoxy(12 - num2 + 3, l + 12);
-		cout << "2ÀÇ º¸¼ö";
+		cout << "2ì˜ ë³´ìˆ˜";
 		linepm(l + 12, 0);
 		for (int i = 0; i < num1; i++)
 		{
@@ -366,7 +365,7 @@ void minusprint(int l)
 			cout << rpc2_2[i];
 		}
 		gotoxy(12 - num2 + 3, l + 14);
-		cout << "°è»ê°ª";
+		cout << "ê³„ì‚°ê°’";
 	}
 }
 
