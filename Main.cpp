@@ -399,7 +399,8 @@ void gotoxy(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
 
-void CursorView(char show) {
+void CursorView(char show) 
+{
 	HANDLE hConsole;
 	CONSOLE_CURSOR_INFO ConsoleCursor;
 
