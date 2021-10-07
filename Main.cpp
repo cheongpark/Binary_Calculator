@@ -31,16 +31,18 @@ void CursorView(char show);
 
 int main()
 {
-	system("title 2진수 계산기");
+	system("title 2진수 계산기-2진수 자리 입력");
 	CursorView(true);
 	arrayin();
 	system("cls");
+	system("title 2진수 계산기-2진수 입력");
 	arraychange();
 	CursorView(false);
 	plusbinary();
 	minusbinary();
 	system("cls");
 
+	system("title 2진수 계산기-2진수 덧셈 출력");
 	printcul(1, 1);
 	plusprint(4);
 
@@ -48,10 +50,14 @@ int main()
 	system("pause");
 	system("cls");
 
+	system("title 2진수 계산기-2진수 뺄셈 출력");
 	printcul(1, 2);
 	minusprint(4);
 
+	system("title 끝");
 	gotoxy(0, 20);
+
+	system("pause");
 }
 
 void arrayin()
