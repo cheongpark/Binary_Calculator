@@ -35,16 +35,18 @@ int main()
 	CursorView(true);
 	arrayin();
 	system("cls");
+	
 	system("title 2진수 계산기-2진수 입력");
 	arraychange();
 	CursorView(false);
-	plusbinary();
-	minusbinary();
+	
+	plusbinary(); //더하기 계산
+	minusbinary(); //빼기 계산
 	system("cls");
 
 	system("title 2진수 계산기-2진수 덧셈 출력");
 	printcul(1, 1);
-	plusprint(4);
+	plusprint(4); //더하기 출력
 
 	gotoxy(0, 17);
 	system("pause");
@@ -52,7 +54,7 @@ int main()
 
 	system("title 2진수 계산기-2진수 뺄셈 출력");
 	printcul(1, 2);
-	minusprint(4);
+	minusprint(4); //빼기 출력
 
 	system("title 끝");
 	gotoxy(0, 20);
